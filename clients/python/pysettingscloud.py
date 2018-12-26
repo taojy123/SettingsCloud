@@ -61,6 +61,16 @@ if __name__ == '__main__':
 
 
 
+"""
+# usage:
+# set SETTINGS_CLOUD_KEY in environment
+try:
+    import pysettingscloud
+    s = pysettingscloud.SettingsClient()
+    exec(s.get_script('settings_script_name'))
+except Exception as e:
+    print(e)
+"""
 
 
 

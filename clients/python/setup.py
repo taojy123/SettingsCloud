@@ -12,7 +12,7 @@ python 客户端
 
 setup(
     name='pysettingscloud',
-    version='0.1.1',
+    version='0.1.2',
     description='SettingsCloud 的 python 客户端',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,7 +24,7 @@ setup(
     license='MIT License',
     py_modules=['pysettingscloud'],
     platforms=["all"],
-    url='https://github.com/taojy123/pysettingscloud',
+    url='https://github.com/taojy123/SettingsCloud/tree/master/clients/python',
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: Implementation',
