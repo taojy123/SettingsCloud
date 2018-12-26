@@ -50,7 +50,7 @@ class SettingsClient(object):
 if __name__ == '__main__':
 
     s = SettingsClient()
-    s.set_host('http://127.0.0.1:6004/')
+    s.set_host('http://settings.tslow.cn')
     s.set_key('testkey')
 
     s.set_script('test', 'a=1\nprint(a)', 'python', 'testkey')
