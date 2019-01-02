@@ -19,7 +19,7 @@ def settings(request):
         key = request.GET.get('key', '')
         s = get_object_or_404(SettingScript, name=name)
         if s.key_list and key not in s.key_list:
-            return HttpResponseBadRequest('invalid key')
+            return HttpResponseBadRequest('Invalid key! Check SETTINGS_CLOUD_KEY in environment!')
         return HttpResponse(s.content)
 
     else:
