@@ -25,10 +25,12 @@ class SettingsClient(object):
         host = host or self.get_host()
         url = '%s/settings/?name=%s&key=%s' % (host, name, key)
         try:
-            script = requests.get(url).text
-            return script
+            r = requests.get(url)
+            if r.status_code >= 400:
+                raise Exception(r.text)
+            return r.text
         except Exception as e:
-            print('get script from settings cloud failed!')
+            print('Get script from settings cloud failed!')
             print(e)
             return ''
 

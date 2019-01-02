@@ -12,7 +12,7 @@ python 客户端
 
 setup(
     name='pysettingscloud',
-    version='0.1.2',
+    version='0.1.3',
     description='SettingsCloud 的 python 客户端',
     long_description=long_description,
     long_description_content_type="text/markdown",
