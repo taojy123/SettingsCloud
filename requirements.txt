@@ -1,4 +1,4 @@
 #Python2.7
-django==1.11.8
+django==1.11.17
 uwsgi>=2.0.15
 requests
