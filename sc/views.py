@@ -2,7 +2,7 @@
 
 
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import render_to_response, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import auth
@@ -17,7 +17,9 @@ def settings(request):
     if request.method == 'GET':
         name = request.GET.get('name', '')
         key = request.GET.get('key', '')
-        s = get_object_or_404(SettingScript, name=name)
+        s = SettingScript.objects.filter(name=name).first()
+        if not s:
+            return HttpResponseNotFound('Script not found! Please create it first!')
         if s.key_list and key not in s.key_list:
             return HttpResponseBadRequest('Invalid key! Check SETTINGS_CLOUD_KEY in environment!')
         return HttpResponse(s.content)
