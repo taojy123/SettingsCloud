@@ -20,7 +20,7 @@ class SettingsClient(object):
         host = host.strip().strip('/')
         os.environ['SETTINGS_CLOUD_HOST'] = host
 
-    def get_script(self, name, key='', host=''):
+    def get_script(self, name, key='', host='', quiet=False):
         key = key or self.get_key()
         host = host or self.get_host()
         url = '%s/settings/?name=%s&key=%s' % (host, name, key)
@@ -30,8 +30,9 @@ class SettingsClient(object):
                 raise Exception(r.text)
             return r.text
         except Exception as e:
-            print('Get script %s from settings cloud failed!' % name)
-            print(e)
+            if not quiet:
+                print('Get script %s from settings cloud failed!' % name)
+                print(e)
             return ''
 
     def set_script(self, name, content, language='', key='', host=''):
