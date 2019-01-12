@@ -1,2 +1,15 @@
+<pre>
 【Settings Cloud】
-请直接调用 api {{ request.scheme }}://{{ request.get_host }}/settings/, 或登录管理后台。
+云端储存项目配置的敏感参数，拒绝使用 local_settings 造成代码管理的混乱
+API: {{ request.scheme }}://{{ request.get_host }}/settings/
+SDK: https://pypi.org/project/pysettingscloud/
+admin: {{ request.scheme }}://{{ request.get_host }}/admin/
+
+API Reference:
+创建配置脚本:
+    curl "{{ request.scheme }}://{{ request.get_host }}/settings/" -X POST -d "name=aaa&key=bbb&content=SECRET_KEY='123'"
+获取配置脚本:
+    curl "{{ request.scheme }}://{{ request.get_host }}/settings/?name=aaa&key=bbb"
+
+</pre>
+
