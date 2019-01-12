@@ -30,7 +30,7 @@ class SettingsClient(object):
                 raise Exception(r.text)
             return r.text
         except Exception as e:
-            print('Get script from settings cloud failed!')
+            print('Get script %s from settings cloud failed!' % name)
             print(e)
             return ''
 

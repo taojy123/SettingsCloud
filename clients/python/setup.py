@@ -5,14 +5,14 @@ from setuptools import setup
 long_description = """
 https://github.com/taojy123/SettingsCloud
 
-云端储存项目配置的敏感参数，避免使用 settings_local 管理的混乱
+云端储存项目配置的敏感参数，拒绝使用 local_settings 造成代码管理的混乱
 
-python 客户端
+Python 客户端
 """
 
 setup(
     name='pysettingscloud',
-    version='0.1.3',
+    version='0.1.4',
     description='SettingsCloud 的 python 客户端',
     long_description=long_description,
     long_description_content_type="text/markdown",
